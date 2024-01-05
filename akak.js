@@ -171,7 +171,16 @@ async function scriptUIScript(){
         resolve(document.body.appendChild(script))
     });
 }
+async function arancustomScript(){
+    await scriptUIScript()
+    return new Promise((resolve, reject) => {
+        var script = document.createElement('script');
+        var surl = 'js/arancustom.js';
+        script.src = surl;
+        resolve(document.body.appendChild(script))
+    });
+}
 
 window.onload = function () {
-scriptUIScript();
+arancustomScript();
 }
